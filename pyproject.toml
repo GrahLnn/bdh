@@ -1,0 +1,16 @@
+[project]
+name = "bdh"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = ["numpy>=2.3.3", "requests>=2.32.5", "torch>=2.8.0"]
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cu129", marker = "sys_platform != 'linux'" }]
+torchvision = [{ index = "pytorch-cu129", marker = "sys_platform != 'linux'" }]
+
+[[tool.uv.index]]
+name = "pytorch-cu129"
+url = "https://download.pytorch.org/whl/cu129"
+explicit = true
